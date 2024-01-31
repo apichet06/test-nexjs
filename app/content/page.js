@@ -10,12 +10,12 @@ async function getBlogs() {
 export default async function Page() {
     try {
         const data = await getBlogs();
-        console.log(data);
+
         return (
             <>
-                {data.map((item, index) => (
+                {data.data.map((item, index) => (
                     <div key={index}>
-                        {item.u_title}
+                        {item.u_title + item.u_firstname + ' ' + item.u_lastname}
                     </div>
                 ))}
             </>
